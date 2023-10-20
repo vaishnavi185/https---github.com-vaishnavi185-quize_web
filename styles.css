@@ -1,0 +1,72 @@
+*{
+  margin: o;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+html{
+    font-size: 62.5%;
+}
+.main-class{
+    width: 100vw;
+    height: 100vw;
+    display: grid;
+    place-items:center;
+    background-color: #dab3e6;;
+}
+.inner-class{
+    width: 40vw;
+    background-color: #fff;
+    padding: 3rem 8rem;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 0.7rem -0.7rem rgba(0, 0,0,0.4);
+}
+.inner-class h2{
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin: 1 0rem 4rem 0;
+
+}
+.inner-class li{
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    list-style: none;
+}
+input{
+    cursor: pointer;
+}
+#submit, .btn{
+    padding: 1rem 3rem;
+    outline: none;
+    font-size :2rem;
+    font-size: 400;
+    display: block;
+    margin: auto;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color:#dab3e6 ;
+    margin-top: 4rem;
+}
+#submit:hover {
+    background-color: #a065b3 ;
+}
+#Score {
+    background-color: rgb(232, 193, 229);
+    margin-top: 3rem;
+    padding: 3rem 4rem;
+    box-shadow: 0 1rem 0.7rem -0.7rem rgba(0, 0,0,0.4);
+}
+.scoreArea{
+   display: none;
+}
+#Score .btn{
+    margin-top: 2rem;
+    background-color: #a065b3;
+    color: #f7f3f3;
+}
+#Score .btn :hover{
+    background-color: #a21acb;
+    color: #efebeb;
+    
+}

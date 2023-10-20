@@ -1,0 +1,71 @@
+.row{
+    display: flex;
+}
+.hh1{
+    font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Young Serif', serif;
+font-size: x-large;
+}
+.col{
+float: right;
+}
+.list {
+   
+    display: flex;
+    overflow: hidden;
+    list-style: none;
+}
+
+.list a {
+   
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 12px;
+    text-decoration: solid;
+    color: #000;
+    justify-content: space-around;
+
+}
+
+.drop {
+    float: left;
+    position: relative;
+}
+
+.img2{
+    height: 400;
+    width: 200;
+    margin-left: 360px;
+}
+.hh2{
+    font-size: xx-large;
+    font-family: 'Young Serif', serif;
+    color:#8c6398;
+}
+.hh3{
+    font-family: 'Poppins', sans-serif;
+    color: #706c6c; 
+}
+.b1{
+    width: 230px;
+    height: 40px;
+    background-color: #8c6398;
+    border: none;
+    border-radius: 10px;
+}
+
+.hh4{
+    text-align: center;
+    font-size: x-large;
+    color: #f8f6f6;
+    margin-top: 6px;
+}
+.container{
+    margin-left: 168px;
+    height: 400px;
+    width: 1000px;
+    border-radius: 10px;
+    border: 1px solid #716f6f
+  
+}

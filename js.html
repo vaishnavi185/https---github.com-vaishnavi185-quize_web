@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&family=Young+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-class">
+        <div class="inner-class">
+            <h2 class="question">Question Here</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="ans1" class="answer">
+                    <label for="ans1" id="option1">Answer option 1</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans2" class="answer">
+                    <label for="ans2" id="option2">Answer option 2</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans3" class="answer">
+                    <label for="ans3" id="option3">Answer option 3</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="ans4" class="answer">
+                    <label for="ans4" id="option4">Answer option 4</label>
+                </li>
+            </ul>
+            <button id="submit">
+                Submit
+            </button>
+            <div id="Score" class="scoreArea"></div>
+        </div>
+    </div>
+    <script>
+        const quizDB = [
+            {
+                question: "Q1: What is the capital of France?",
+                a: 'Paris',
+                b: "London",
+                c: "Brazil",
+                d: "Delhi",
+                ans: "ans1"
+            },
+            {
+                question: "Q2: What is the largest planet in our solar system?",
+                a: 'Neptune',
+                b: "Jupiter",
+                c: "Pluto",
+                d: "Earth",
+                ans: "ans2"
+            },
+            {
+                question: "Q3: Which country won the FIFA World Cup in 2018?",
+                a: 'Paris',
+                b: "London",
+                c: "Brazil",
+                d: "France",
+                ans: "ans4"
+            },
+            {
+                question: "Q4: What is the tallest mountain in the world?",
+                a: 'K2',
+                b: "Mount Everest",
+                c: "Himalaya",
+                d: "Peak",
+                ans: "ans1"
+            }
+        ];
+
+        let questionCount = 0;
+        let score =0;
+        const question = document.querySelector(".question");
+        const option1 = document.querySelector('#option1');
+        const option2 = document.querySelector('#option2');
+        const option3 = document.querySelector('#option3');
+        const option4 = document.querySelector('#option4');
+        const submit = document.querySelector('#submit');
+        const answers = document.querySelectorAll('.answer');
+        const  Score = document.querySelector('#Score');
+
+        const loadQuestion = () => {
+            const questionList = quizDB[questionCount];
+            question.innerText = questionList.question;
+            option1.innerText = questionList.a;
+            option2.innerText = questionList.b;
+            option3.innerText = questionList.c;
+            option4.innerText = questionList.d;
+        }
+
+        loadQuestion();
+        const getCheckAnswer = () => {
+    let answer;
+    answers.forEach((curAnsElem) => {
+        if (curAnsElem.checked) {
+            answer = curAnsElem.id;
+        }
+    });
+    return answer;
+}
+      const deselectall = ()=>{
+        answers.forEach((curAnsElem)=>curAnsElem=false);
+      }
+        submit.addEventListener("click",()=>{
+            const checkedAnswer = getCheckAnswer();
+            console.log(checkedAnswer);
+            if(checkedAnswer== quizDB[questionCount].ans){
+                score++;
+            }
+            questionCount++;
+            deselectall();
+            if(questionCount<quizDB.length){
+                loadQuestion();
+            }else{
+                Score.innerHTML = `<h2>You Score ${score}/${quizDB.length}🤗</h2>
+        <button class="btn" onclick="location.reload()"> play again </button>`;
+        Score.classList.remove('scoreArea');
+            }
+
+        })
+    </script>
+</body>
+</html>
